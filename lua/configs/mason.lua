@@ -1,18 +1,13 @@
 return {
 	ensure_installed = {
+		"bash-language-server",
+		"terraform-ls",
 		"lua-language-server",
 		"stylua",
-		"rust-analyzer",
 		"pyright",
-		"clangd",
 		"prettier",
-		"rustfmt",
-		"black",
-		"isort",
 		"typescript-language-server",
-		"svelte-language-server",
-		"codelldb",
-		"debugpy",
+		"markdownlint",
 	},
 
 	max_concurrent_installers = 10,
