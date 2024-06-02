@@ -193,4 +193,15 @@ return {
 		"Exafunction/codeium.vim",
 		event = "BufEnter",
 	},
+	{
+		"smartinellimarco/nvcheatsheet.nvim",
+		opts = function()
+			return require("configs.nvcheatsheet")
+		end,
+		config = function(_, opts)
+			local nvcheatsheet = require("nvcheatsheet")
+			vim.keymap.set("n", "<F1>", nvcheatsheet.toggle)
+			require("nvcheatsheet").setup(opts)
+		end,
+	},
 }
