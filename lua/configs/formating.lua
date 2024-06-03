@@ -14,7 +14,9 @@ return {
 		graphql = { "prettier" },
 		lua = { "stylua" },
 		python = { "isort", "black" },
-		rust = { "rustfmt" },
+		terraform = { "terraform_fmt" },
+		tf = { "terraform_fmt" },
+		["terraform-vars"] = { "terraform_fmt" },
 	},
 	format_on_save = {
 		lsp_fallback = true,

@@ -1,13 +1,18 @@
 return {
 	ensure_installed = {
 		"bash-language-server",
-		"terraform-ls",
+		"black",
+		"isort",
+		"jq",
 		"lua-language-server",
-		"stylua",
-		"pyright",
-		"prettier",
-		"typescript-language-server",
 		"markdownlint",
+		"prettier",
+		"pyright",
+		"stylua",
+		"terraform-ls",
+		"tfsec",
+		"tflint",
+		"typescript-language-server",
 	},
 
 	max_concurrent_installers = 10,

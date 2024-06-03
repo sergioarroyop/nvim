@@ -57,6 +57,8 @@ return {
 					"yaml",
 					"go",
 					"json",
+					"terraform",
+					"hcl",
 				},
 				sync_install = false,
 				highlight = { enable = true },
@@ -90,6 +92,11 @@ return {
 		config = function()
 			require("configs.lspconfig")
 		end,
+		opts = {
+			servers = {
+				terraformls = {},
+			},
+		},
 	},
 	{
 		"nvim-neo-tree/neo-tree.nvim",
@@ -154,6 +161,10 @@ return {
 	},
 	{
 		"stevearc/conform.nvim",
+		dependencies = {
+			{ "neovim/nvim-lspconfig" },
+			{ "williamboman/mason.nvim" },
+		},
 		event = { "BufReadPre", "BufNewFile" },
 		opts = function()
 			return require("configs.formating")
@@ -187,8 +198,18 @@ return {
 			return require("configs.gitsigns")
 		end,
 	},
-	{ "farmergreg/vim-lastplace" },
+	{
+		"farmergreg/vim-lastplace",
+		opts = function()
+			return require("configs.lastplace")
+		end,
+		config = function(_, opts)
+			local ibl = require("ibl")
+			ibl.setup(opts)
+		end,
+	},
 	{ "lukas-reineke/indent-blankline.nvim" },
+	{ "tpope/vim-commentary" },
 	{
 		"Exafunction/codeium.vim",
 		event = "BufEnter",
