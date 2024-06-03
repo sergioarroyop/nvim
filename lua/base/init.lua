@@ -15,7 +15,7 @@ o.hidden = true
 o.cmdheight = 1
 o.updatetime = 300
 o.cursorline = true
-o.mouse = "a"
+o.mouse = ""
 o.termguicolors = true
 
 --Mappings
