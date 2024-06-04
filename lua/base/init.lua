@@ -18,6 +18,13 @@ o.cursorline = true
 o.mouse = ""
 o.termguicolors = true
 
+-- Extra configs
+vim.filetype.add({
+	extension = {
+		tf = "terraform",
+	},
+})
+
 --Mappings
 key.set("n", "<leader>1", vim.cmd.bfirst)
 key.set("n", "<leader>0", vim.cmd.blast)
