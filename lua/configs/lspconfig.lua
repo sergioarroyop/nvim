@@ -40,4 +40,4 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 lspconfig.pyright.setup({})
 lspconfig.lua_ls.setup({})
-lspconfig.tsserver.setup({})
+lspconfig.ts_ls.setup({})
