@@ -15,16 +15,22 @@
 -- IdentBlankline - Show indent lines
 -- Codeium - Code completion
 
+local themes = require("configs.themes")
+
+local theme_plugins = {}
+for _, theme in ipairs(themes.modules) do
+	vim.list_extend(theme_plugins, theme)
+end
+
 return {
+	theme_plugins,
 	{
-		"folke/tokyonight.nvim",
+		"zaldih/themery.nvim",
 		lazy = false,
-		priority = 1000,
-		enable = true,
-		opts = {},
 		config = function()
-			require("tokyonight").setup()
-			vim.cmd.colorscheme("tokyonight")
+			require("themery").setup({
+				themes = themes.names,
+			})
 		end,
 	},
 	{
