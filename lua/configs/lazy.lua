@@ -105,14 +105,63 @@ return {
 		},
 	},
 	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
+		"nvim-tree/nvim-tree.lua",
+		version = "*",
+		lazy = false,
 		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-			"MunifTanjim/nui.nvim",
-			-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+			"nvim-tree/nvim-web-devicons",
 		},
+		config = function()
+			return require("nvim-tree").setup({
+				update_focused_file = {
+					enable = true,
+					update_cwd = true,
+				},
+				renderer = {
+					root_folder_modifier = ":t",
+					-- These icons are visible when you install web-devicons
+					icons = {
+						glyphs = {
+							default = "",
+							symlink = "",
+							folder = {
+								arrow_open = "",
+								arrow_closed = "",
+								default = "",
+								open = "",
+								empty = "",
+								empty_open = "",
+								symlink = "",
+								symlink_open = "",
+							},
+							git = {
+								unstaged = "",
+								staged = "S",
+								unmerged = "",
+								renamed = "➜",
+								untracked = "U",
+								deleted = "",
+								ignored = "◌",
+							},
+						},
+					},
+				},
+				diagnostics = {
+					enable = true,
+					show_on_dirs = true,
+					icons = {
+						hint = "",
+						info = "",
+						warning = "",
+						error = "",
+					},
+				},
+				view = {
+					width = 30,
+					side = "left",
+				},
+			})
+		end,
 	},
 	{
 		-- Thank you to Josean for his video https://youtu.be/NL8D8EkphUw?si=3ZAt7ZJ0S1HuDJ_M
